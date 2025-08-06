@@ -159,31 +159,30 @@
       }
     }
 
-    /* Footer styles */
+    /* Enhanced Footer styles */
     .footer-box {
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.05);
       box-shadow: 0 0 12px rgba(255, 255, 255, 0.03);
-      padding: 0.5rem 1.5rem;
+      padding: 1.5rem;
       border-radius: 1rem;
-
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      max-width: none;
+      max-width: 1200px;
       gap: 2rem;
       flex-wrap: wrap;
     }
 
     .footer-text {
       color: #d1d5db;
-      font-size: 0.775rem;
-      line-height: 1.25rem;
-      max-width: 60%;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      flex: 1;
+      min-width: 280px;
       text-align: left;
-      min-width: 200px;
     }
 
     .footer-logos {
@@ -192,17 +191,37 @@
       gap: 1.5rem;
       flex-wrap: wrap;
       justify-content: flex-end;
-      min-width: 200px;
+      flex-shrink: 0;
     }
 
     .footer-logos img {
-      height: 48px;
+      height: 60px;
       width: auto;
-      max-width: 100%;
-      transition: height 0.3s ease;
+      max-width: 180px;
+      transition: all 0.3s ease;
+      object-fit: contain;
     }
 
-    /* Responsive adjustments */
+    /* Tablet responsiveness (768px to 1024px) */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .footer-box {
+        padding: 1.25rem;
+        gap: 1.5rem;
+      }
+      
+      .footer-text {
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+        min-width: 250px;
+      }
+      
+      .footer-logos img {
+        height: 44px;
+        max-width: 110px;
+      }
+    }
+
+    /* Mobile and small tablet responsiveness */
     @media (max-width: 768px) {
       h1 {
         font-size: 3rem;
@@ -222,19 +241,38 @@
         max-height: 4rem;
       }
 
+      .footer-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.25rem;
+      }
+
       .footer-text {
         max-width: 100%;
         min-width: auto;
         text-align: center;
+        font-size: 0.8rem;
+        line-height: 1.4rem;
       }
 
       .footer-logos {
         justify-content: center;
-        min-width: auto;
+        width: 100%;
+      }
+
+      .footer-logos img {
+        height: 40px;
+        max-width: 100px;
       }
     }
 
+    /* Small mobile devices */
     @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+
       h1 {
         font-size: 2.5rem;
       }
@@ -252,24 +290,43 @@
         max-height: 3rem;
       }
 
-      /* Stack footer content vertically on small screens */
       .footer-box {
-        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        margin: 0 -0.5rem; /* Extend to edges on very small screens */
+      }
+
+      .footer-text {
+        font-size: 0.75rem;
+        line-height: 1.3rem;
         text-align: center;
+      }
+
+      .footer-logos {
         gap: 1rem;
       }
 
-      .footer-text,
-      .footer-logos {
-        max-width: 100%;
-        min-width: auto;
-        justify-content: center;
+      .footer-logos img {
+        height: 36px;
+        max-width: 90px;
+      }
+    }
+
+    /* Extra small devices */
+    @media (max-width: 360px) {
+      .footer-box {
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+      }
+
+      .footer-text {
+        font-size: 0.7rem;
+        line-height: 1.2rem;
       }
 
       .footer-logos img {
-        height: 72px;
-        width: auto;
-        max-width: 100%;
+        height: 32px;
+        max-width: 80px;
       }
     }
   </style>
@@ -304,17 +361,15 @@
       <a href="https://x.hackx.lk/" target="_blank" rel="noopener noreferrer">
         <img src="images/hackXlogo.webp" alt="hackX 2025 Logo" class="max-h-16 w-auto" />
       </a>
-      
     </div>
     <div class="glow-box">
       <a href="https://www.jr.hackx.lk/" target="_blank" rel="noopener noreferrer">
         <img src="images/JR LOGO 02.png" alt="hackX Jr. Logo" class="max-h-16 w-auto" />
       </a>
-      
     </div>
   </div>
 
-  <!-- Footer Section -->
+  <!-- Enhanced Footer Section -->
   <footer class="w-full flex justify-center mt-16 mb-4 z-100 px-4">
     <div class="footer-box">
       <div class="footer-text">
